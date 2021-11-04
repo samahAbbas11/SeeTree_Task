@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>SeeTree-Stats</title>
+		<style type="text/css">
+
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			height: 100%;
+			max-height: 100%;
+			font-family:Sans-serif;
+			line-height: 1.5em;
+		}
+
+		main {
+			position: fixed;
+			top: 50px; /* Set this to the height of the header */
+			bottom: 50px; /* Set this to the height of the footer */
+			left: 230px;
+			right: 0;
+			overflow: auto;
+			background: #fff;
+		}
+
+		#header {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 50px;
+			overflow: hidden; /* Disables scrollbars on the header frame. To enable scrollbars, change "hidden" to "scroll" */
+			background: #BCCE98;
+		}
+
+		#footer {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			overflow: hidden; /* Disables scrollbars on the footer frame. To enable scrollbars, change "hidden" to "scroll" */
+			background: #BCCE98;
+		}
+
+
+		.innertube {
+			margin: 15px; /* Provides padding for the content */
+		}
+
+		p {
+			color: #555;
+		}
+
+
+		/*IE6 fix*/
+		* html body{
+			padding: 50px 0 50px 230px; /* Set the first value to the height of the header, the third value to the height of the footer, and last value to the width of the nav */
+		}
+
+		* html main{
+			height: 100%;
+			width: 100%;
+		}
+
+		</style>
+
+
+	</head>
+
+	<body>
+
+		<header id="header">
+			<div class="innertube">
+				<h2>SeeTree</h2>
+			</div>
+		</header>
+
+		<main>
+			<div class="innertube">
+
+				<h1>Image statistics:</h1>
+				<div>
+                    <h2>You chose: {{img_file_name}} </h2>
+                    <img src="https://storage.googleapis.com/seetree-demo-open/{{img_file_name}}" alt="">
+
+                </div>
+				<h3>The function is: {{func_name}}</h3>
+				<h3>The result: {{res}}</h3>
+
+			</div>
+		</main>
+
+
+		<footer id="footer">
+			<div class="innertube">
+				<h2>Done by: Samah Abbas</h2>
+			</div>
+		</footer>
+
+	</body>
+</html>
