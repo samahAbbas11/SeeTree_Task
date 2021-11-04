@@ -35,11 +35,11 @@ def func_IsSupported(func):
     if func in funcs or check_p_func(func):
         return True
 
-# checks that pXXX function is valid -> (p1 - p100)
+# checks that pXXX function is valid -> (p0 - p100)
 def check_p_func(pFunc):
     if pFunc.startswith('p') and pFunc[1:].isdigit:
         print(pFunc)
-        if int(pFunc[1:]) in range(1,101):
+        if int(pFunc[1:]) in range(0,101):
             return True
     return False
 
