@@ -19,7 +19,7 @@ for i in range(101):
 # stats route (img statistics) --> supports only GET requests
 @app.route('/stats/<img_file_name>/<func_name>', methods = ['GET'])
 
-@cache.cached(timeout=30, query_string=True)
+@cache.cached(timeout=300, query_string=True)
 def stats(img_file_name , func_name):
 
     url= "https://storage.googleapis.com/seetree-demo-open/"+img_file_name
