@@ -2,3 +2,5 @@ Flask
 requests
 numpy
 Pillow
+redis
+flask_caching

@@ -4,23 +4,18 @@ import numpy as np
 
 ## Supported functions are :
 # min
-# max
-# mean
-# median
-# pXXX
-
 def min(img):
     return np.min(img)
-
+# max
 def max(img):
     return np.max(img)
-
+# mean
 def mean(img):
     return np.mean(img)
-
+# median
 def median(img):
     return np.median(img)
-
+# pXXX
 def percentile(img,p):
     return np.percentile(img, p) # Compute the p-th percentile of the data along the specified axis
 

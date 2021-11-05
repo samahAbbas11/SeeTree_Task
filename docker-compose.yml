@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api:
+    container_name: flask-container
+    build: .
+    entrypoint: python ./img_Stats.py
+    env_file:
+      - .env
+    ports:
+      - '8181:8181'
+  redis:
+    image: redis
+    container_name: redis-container
+    ports:
+      - "6379:6379"

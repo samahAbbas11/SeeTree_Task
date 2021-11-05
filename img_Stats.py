@@ -3,14 +3,23 @@ import requests
 from PIL import Image,ImageOps
 import functions
 import numpy as np
-
-
-
+from flask_caching import Cache  # Import Cache from flask_caching module
 
 app = Flask(__name__)
 
+app.config.from_object('config.BaseConfig')  # Set the configuration variables to the flask application
+cache = Cache(app)  # Initialize Cache
+
+
+prange=[]
+for i in range(101):
+    prange.append("p"+str(i))
+
+
 # stats route (img statistics) --> supports only GET requests
 @app.route('/stats/<img_file_name>/<func_name>', methods = ['GET'])
+
+@cache.cached(timeout=30, query_string=True)
 def stats(img_file_name , func_name):
 
     url= "https://storage.googleapis.com/seetree-demo-open/"+img_file_name
@@ -42,8 +51,7 @@ def stats(img_file_name , func_name):
         result = method_to_call(arr_img,int(func_name[1:]))
 
 
-
-    return render_template('stats.html',img_file_name=img_file_name,func_name=func_name,res=result)
+    return render_template('stats.html',img_file_name=img_file_name,func_name=func_name,res=result,prange=prange)
 
 
 # health route --> supports only GET requests
@@ -61,16 +69,14 @@ def root_route():
 def images():
     return render_template('images.html')
 
-@app.route("/stats/<img_file_name>")                        
+@app.route("/stats/<img_file_name>")
 def choose_Func(img_file_name):
-    return render_template("choose_Func.html",img_file_name=img_file_name)
+    return render_template("choose_Func.html",img_file_name=img_file_name,prange=prange)
 
 
 @app.errorhandler(404)
 def page_not_found(error):
    return render_template('404.html', title = '404'), 404
-
-
 
 
 if __name__ == "__main__":
