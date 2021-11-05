@@ -101,6 +101,8 @@ So, the requests go through a cache toward the service hosting the resource. If 
 ### while the second same request took 897 ms :
 <img width="500" alt="screenshot" src="screenshots/sec.jpg">
 
+### Redis cache :
+<img width="500" alt="screenshot" src="screenshots/cache-redis.png">
 
 
 
