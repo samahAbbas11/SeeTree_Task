@@ -94,4 +94,18 @@ So, the requests go through a cache toward the service hosting the resource. If 
 
     <img width="500" alt="screenshot" src="screenshots/cache.png">
     
+### First request took 6.29 seconds :
+
+<img width="500" alt="screenshot" src="screenshots/first.jpg">,
+
+### while the second same request took 897 ms :
+<img width="500" alt="screenshot" src="screenshots/sec.jpg">
+
+
+
+
+
+
+
+    
   
