@@ -61,7 +61,7 @@ def root_route():
 def images():
     return render_template('images.html')
 
-@app.route("/stats/<img_file_name>")                          # after they choose an image they can choose the function 
+@app.route("/stats/<img_file_name>")                        
 def choose_Func(img_file_name):
     return render_template("choose_Func.html",img_file_name=img_file_name)
 
