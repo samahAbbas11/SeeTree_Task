@@ -19,6 +19,7 @@ ______________________________________________
  3. run the app
 ```
 git clone https://github.com/samahAbbas11/SeeTree_Task.git
+pip install -r requirements.txt
 python ./img_Stats.py
 ```
 ______________________________________________
