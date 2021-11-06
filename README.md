@@ -12,22 +12,13 @@ The web server will support the following routes, both will support only GET req
     - median
     - pXXX where XXX is a percentile between 0...100. For example p10 is the  10th percentile of the image, p99 is the 99th percentile
 ______________________________________________
-### Run the app  :
- In order to run the app:
- 1. install pyhton3.10
- 2. install the requiremnets (run ```pip install -r requirements.txt```)
- 3. run the app
-```
-git clone https://github.com/samahAbbas11/SeeTree_Task.git
-pip install -r requirements.txt
-python ./img_Stats.py
-```
-______________________________________________
+## Run the app  :
 ### Build & Run with docker-compose  :
 By docker-compose we can run the dockerfile(app image) and Redis (for caching, further explanition below),in same service 
 For the application: we expose the port 8181 in and out, and for Redis:we expose 6379.
 
 ```
+git clone https://github.com/samahAbbas11/SeeTree_Task.git
 docker-compose up -d --build
 ```
 
